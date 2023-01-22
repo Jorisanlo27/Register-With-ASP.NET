@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Icicio Usuarios";
+}
+
+<br />
+
+<div class="text-center">
+    <h1 class="display-4">Registros de Usuarios</h1>
+    <br />
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Correo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @{
+                if (ViewBag.Usuarios!=null)
+                {
+                    foreach (var item in ViewBag.Usuarios)
+                    {
+                        <tr>
+                            <td>@item.id</td>
+                            <td>@item.nombre</td>
+                            <td>@item.edad</td>
+                            <td>@item.correo</td>
+                            <td>
+                                <a class="btn btn-warning">Edit</a> |
+                                <a class="btn btn-primary">Details</a> |
+                                <a class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
